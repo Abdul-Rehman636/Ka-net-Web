@@ -104,27 +104,33 @@ link4.style.fontFamily = 'Tahoma';
 
 links_div.appendChild(link4);
 
-var button = document.createElement("a");
+// var button = document.createElement("a");
 
-button.innerText = "Connect Now";
+// button.innerText = "Connect Now";
 
-button.style.fontFamily = 'monospace';
+// button.style.fontFamily = 'monospace';
 
-button.style.fontSize = '18px';
+// button.style.fontSize = '18px';
 
-button.style.border = '1px solid blue';
+// button.style.border = '1px solid blue';
 
-button.style.padding = '10px 40px';
+// button.style.padding = '10px 40px';
 
-button.style.color = 'white';
+// button.style.color = 'white';
 
-button.style.backgroundColor = '#0057FF';
+// button.style.backgroundColor = '#0057FF';
 
-button.setAttribute('href', 'Connect Now');
+// button.setAttribute('href', 'Connect Now');
 
-button.style.textDecoration = 'none';
+// button.style.textDecoration = 'none';
 
-div2.appendChild(button);
+// div2.appendChild(button);
+
+var hamburger = document.getElementById("hamburger");
+
+hamburger.style.display = 'none';
+
+div2.appendChild(hamburger);
 
 var div3 = document.createElement("div");
 
@@ -347,3 +353,74 @@ text8.style.color = '#C7FFBE';
 text8.style.marginLeft = '10px';
 
 div10.appendChild(text8);
+
+
+//Making this web responsive
+
+
+//Hamburger Responsive
+
+var myjsmedia = (hamburger) => {
+    if(hamburger.matches) {
+        var hamburger = document.getElementById("hamburger");
+
+        hamburger.style.display = 'block';
+
+        div2.appendChild(hamburger);
+    } else{
+        var hamburger = document.getElementById("hamburger");
+
+        hamburger.style.display = 'none';
+
+        div2.appendChild(hamburger);
+    }
+}
+
+
+var hamburger = window.matchMedia("(max-width: 1024px)");
+
+myjsmedia(hamburger);
+
+hamburger.addEventListener("change", myjsmedia);
+
+
+//Nav links Responsive
+
+var myjsmedia = (button) => {
+    if(button.matches) {
+        var button = document.createElement("a");
+
+        button.style.display = 'none';
+    } else{
+        var button = document.createElement("a");
+
+        button.innerText = "Connect Now";
+        
+        button.style.fontFamily = 'monospace';
+        
+        button.style.fontSize = '18px';
+        
+        button.style.border = '1px solid blue';
+        
+        button.style.padding = '10px 40px';
+        
+        button.style.color = 'white';
+        
+        button.style.backgroundColor = '#0057FF';
+        
+        button.setAttribute('href', 'Connect Now');
+        
+        button.style.textDecoration = 'none';
+        
+        div2.appendChild(button);
+
+        button.style.display = 'block';
+    }
+}
+
+
+var button = window.matchMedia("(max-width: 1024px)");
+
+myjsmedia(button);
+
+button.addEventListener("change", myjsmedia);
